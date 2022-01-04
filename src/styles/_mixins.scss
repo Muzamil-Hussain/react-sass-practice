@@ -1,0 +1,76 @@
+@import "./variables";
+
+@mixin block-center {
+  margin: 0 auto;
+}
+
+@mixin flex(
+  $justifyContent: flex-start,
+  $alignItems: stretch,
+  $flexDirection: row,
+  $flexWrap: nowrap
+) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+  flex-wrap: $flexWrap;
+}
+
+@mixin abs-position($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin font($size: false, $colour: false, $weight: false, $lh: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+// Extra Small devices
+@mixin xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin md {
+  @media (max-width: #{$sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$xl}) {
+    @content;
+  }
+}
