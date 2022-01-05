@@ -1,12 +1,18 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { Navbar } from "./components";
+import { Footer, Header, Navbar } from "./components";
+import { About, PopularTours, Reviews } from "./containers";
 
 function App() {
   return (
-    <div className="App">
+    <div classNaLme="App">
       <BrowserRouter>
         <Navbar />
+        <Header />
+        <About />
+        <PopularTours />
+        <Reviews />
+        <Footer />
       </BrowserRouter>
     </div>
   );

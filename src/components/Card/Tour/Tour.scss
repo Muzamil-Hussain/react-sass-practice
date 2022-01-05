@@ -1,0 +1,27 @@
+.card {
+  width: 330px;
+  height: 500px;
+  margin-bottom: 16px;
+
+  &:hover > img {
+    filter: none;
+  }
+
+  &__img {
+    height: 226px;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.2s ease-in-out;
+  }
+  &__content {
+    padding: 16px 10px;
+  }
+  &__title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  &__description {
+    font-size: 14px;
+  }
+}

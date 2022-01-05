@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.reviews {
+  padding: 48px 24px;
+  background-color: $color-grey-light-1;
+  &__stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+  }
+}

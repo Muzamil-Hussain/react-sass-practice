@@ -1,0 +1,33 @@
+@import "../../../styles/variables";
+
+.review {
+  width: 380px;
+  height: 200px;
+  display: flex;
+  padding: 54px 16px;
+  justify-content: space-around;
+  align-items: flex-start;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: #fff;
+  }
+
+  &__img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__content {
+    padding: 0 16px;
+  }
+  &__username {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  &__text {
+    font-size: 12px;
+  }
+}

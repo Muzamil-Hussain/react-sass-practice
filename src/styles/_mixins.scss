@@ -1,76 +1,88 @@
 @import "./variables";
 
-@mixin block-center {
-  margin: 0 auto;
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin addGradientToText {
+  display: inline-block;
+  background-image: linear-gradient(
+                  to right,
+                  $color-primary-light,
+                  $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@mixin flex(
-  $justifyContent: flex-start,
-  $alignItems: stretch,
-  $flexDirection: row,
-  $flexWrap: nowrap
-) {
-  display: flex;
-  justify-content: $justifyContent;
-  align-items: $alignItems;
-  flex-direction: $flexDirection;
-  flex-wrap: $flexWrap;
+@mixin primaryGradient {
+  background-image: linear-gradient(
+                  to right bottom,
+                  $color-primary-light,
+                  $color-primary-dark
+  );
 }
-
-@mixin abs-position($top, $right, $bottom, $left) {
+@mixin secondaryGradient {
+  background-image: linear-gradient(
+                  to right bottom,
+                  $color-secondary-light,
+                  $color-secondary-dark
+  );
+}
+@mixin tertiaryGradient {
+  background-image: linear-gradient(
+                  to right bottom,
+                  $color-tertiary-light,
+                  $color-tertiary-dark
+  );
+}
+@mixin absCenter {
   position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@mixin font($size: false, $colour: false, $weight: false, $lh: false) {
-  @if $size {
-    font-size: $size;
-  }
-  @if $colour {
-    color: $colour;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $lh {
-    line-height: $lh;
-  }
-}
+/*
+MEDIA QUERIES MANAGER
+1em = 16px
 
-// Extra Small devices
-@mixin xs {
-  @media (max-width: #{$xs}) {
-    @content;
-  }
-}
+BREAKPOINT OPTIONS
+- phone
+- tab-port
+- tab-land
+- big-desk
 
-// Small devices
-@mixin md {
-  @media (max-width: #{$sm}) {
-    @content;
-  }
-}
+*/
 
-// Medium devices
-@mixin md {
-  @media (max-width: #{$md}) {
-    @content;
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
   }
-}
-
-// Large devices
-@mixin lg {
-  @media (max-width: #{$lg}) {
-    @content;
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
   }
-}
-
-// Extra large devices
-@mixin xl {
-  @media (max-width: #{$xl}) {
-    @content;
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desk {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+  @if $breakpoint == omni {
+    @media (max-width: 48rem) {
+      @content;
+    } //A universal screen size breakpoint
   }
 }
