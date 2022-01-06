@@ -44,6 +44,11 @@
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   }
 
+  &__secondary {
+    width: 200px;
+    text-align: center;
+  }
+
   //A TEXT BUTTON
   &__text {
     &:link,

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.scss";
-import LogoGreenSmall1 from "../../img/logo-green-small-1x.png";
-import LogoGreenSmall2 from "../../img/logo-green-small-2x.png";
-import LogoGreen1 from "../../img/logo-green-1x.png";
-import LogoGreen2 from "../../img/logo-green-2x.png";
+import LogoGreenSmall1 from "../../assets/img/logo-green-small-1x.png";
+import LogoGreenSmall2 from "../../assets/img/logo-green-small-2x.png";
+import LogoGreen1 from "../../assets/img/logo-green-1x.png";
+import LogoGreen2 from "../../assets/img/logo-green-2x.png";
 
 export const Footer = () => {
   return (

@@ -1,0 +1,101 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.contact {
+  display: flex;
+  width: 80vw;
+  height: 70vh;
+
+  @include respond("tab-port") {
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+  }
+
+  &__info {
+    // background-color: $color-primary-dark;
+    @include primaryGradient;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 4rem;
+
+    p {
+      text-align: center;
+    }
+
+    @include respond("tab-port") {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: $color-grey-light-1;
+
+    @include respond("tab-port") {
+      width: 100%;
+    }
+
+    @include respond("phone") {
+      padding: 20px;
+    }
+
+    &--field {
+      width: 100%;
+      margin: 8px;
+    }
+    &--submit {
+      margin-top: 20px !important;
+      align-self: flex-start;
+    }
+
+    label {
+      display: block;
+    }
+    input {
+      width: 80%;
+      height: 40px;
+      padding: 0 8px;
+      outline: none;
+      border: 1px solid $color-grey-dark;
+      border-radius: 3px;
+
+      @include respond("phone") {
+        width: 90%;
+      }
+
+      &:focus,
+      :hover,
+      :active {
+        border: 1px solid $color-primary;
+      }
+    }
+
+    textarea {
+      width: 80%;
+      padding: 8px;
+      outline: none;
+      border: 1px solid $color-grey-dark;
+      border-radius: 3px;
+
+      @include respond("phone") {
+        width: 90%;
+      }
+
+      &:focus,
+      :hover,
+      :active {
+        border: 1px solid $color-primary;
+      }
+    }
+  }
+}

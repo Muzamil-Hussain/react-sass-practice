@@ -4,3 +4,4 @@ export * from "./Footer";
 export * from "./Header";
 export * from "./Typography";
 export * from "./Card";
+export * from "./Form";

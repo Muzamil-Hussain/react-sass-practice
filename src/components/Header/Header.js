@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import { PrimaryHeading } from "../Typography/PrimaryHeading";
-import Logo from "../../img/logo-white.png";
+import Logo from "../../assets/img/logo-white.png";
 import { PrimaryButton } from "../Button/PrimaryButton";
 
 export const Header = () => {
